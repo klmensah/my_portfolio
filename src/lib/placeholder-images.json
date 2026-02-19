@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "headshot",
+      "description": "A professional headshot.",
+      "imageUrl": "https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NzE0OTMwMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "project1",
+      "description": "Screenshot of Project 1.",
+      "imageUrl": "https://images.unsplash.com/photo-1487014679447-9f8336841d58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWIlMjBhcHBsaWNhdGlvbnxlbnwwfHx8fDE3NzE0NTA0ODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web application"
+    },
+    {
+      "id": "project2",
+      "description": "Screenshot of Project 2.",
+      "imageUrl": "https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MHx8fHwxNzcxNTQwMDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard analytics"
+    },
+    {
+      "id": "project3",
+      "description": "Screenshot of Project 3.",
+      "imageUrl": "https://images.unsplash.com/photo-1654764450232-d0724be6dcd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2JpbGUlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzcxNTQwMDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile interface"
+    },
+    {
+      "id": "github-contributions",
+      "description": "GitHub contributions graph.",
+      "imageUrl": "https://images.unsplash.com/photo-1754342536518-2cbf8b2cfc4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb2RlJTIwZ3JhcGh8ZW58MHx8fHwxNzcxNTQwMDEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code graph"
+    },
+    {
+      "id": "lighthouse-badge",
+      "description": "Lighthouse performance score badge.",
+      "imageUrl": "https://images.unsplash.com/photo-1758563920428-6255add48ecc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJmb3JtYW5jZSUyMGJhZGdlfGVufDB8fHx8MTc3MTU0MDAxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "performance badge"
+    }
+  ]
 }
