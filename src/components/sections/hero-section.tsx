@@ -25,7 +25,7 @@ export function HeroSection() {
               <Link href="#contact">Contact Me</Link>
             </Button>
             <Button size="lg" variant="secondary" asChild>
-              <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/lkmensah" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 GitHub
               </a>

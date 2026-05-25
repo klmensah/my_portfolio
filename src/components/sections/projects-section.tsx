@@ -8,7 +8,7 @@ const projects: Project[] = [
     impact: 'Improved data processing efficiency by 40% and enhanced security compliance.',
     techStack: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'TypeScript'],
     liveDemoUrl: '#',
-    githubUrl: 'https://github.com/your-github/project-alpha',
+    githubUrl: 'https://github.com/lkmensah/my_portofolio',
     image: PlaceHolderImages.find(img => img.id === 'project1')!,
   },
   {
@@ -17,7 +17,7 @@ const projects: Project[] = [
     impact: 'Enabled stakeholders to monitor key metrics in real-time, leading to faster response times.',
     techStack: ['Next.js', 'Tailwind CSS', 'Firebase', 'Chart.js'],
     liveDemoUrl: '#',
-    githubUrl: 'https://github.com/your-github/project-beta',
+    githubUrl: 'https://github.com/lkmensah/my_portofolio',
     image: PlaceHolderImages.find(img => img.id === 'project2')!,
   },
   {
@@ -26,7 +26,7 @@ const projects: Project[] = [
     impact: 'Achieved a 99/100 Lighthouse performance score and increased user engagement.',
     techStack: ['React Native', 'GraphQL', 'Stripe', 'MongoDB'],
     liveDemoUrl: '#',
-    githubUrl: 'https://github.com/your-github/project-gamma',
+    githubUrl: 'https://github.com/lkmensah/my_portofolio',
     image: PlaceHolderImages.find(img => img.id === 'project3')!,
   },
 ];

@@ -63,13 +63,13 @@ export function ContactSection() {
                 <p className="text-sm text-muted-foreground">linkedin.com/in/your-linkedin</p>
               </div>
             </a>
-            <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-card/50">
+            <a href="https://github.com/lkmensah" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-card/50">
               <div className="rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                 <Github className="h-6 w-6" />
               </div>
               <div>
                 <h4 className="font-semibold">GitHub</h4>
-                <p className="text-sm text-muted-foreground">github.com/your-github</p>
+                <p className="text-sm text-muted-foreground">github.com/lkmensah</p>
               </div>
             </a>
             <Button variant="outline" size="lg" asChild className="mt-4">
