@@ -23,7 +23,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="article-shell">
       <nav className="article-nav" aria-label="Blog navigation">
-        <Link href="/"><ArrowLeft aria-hidden="true" /> Back to portfolio</Link>
+        <Link href="/#blog"><ArrowLeft aria-hidden="true" /> Back to blog</Link>
         <span>KLM<span>.</span></span>
       </nav>
       <article className="article-card">

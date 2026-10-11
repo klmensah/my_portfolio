@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, MapPin, ShieldCheck } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
@@ -99,6 +99,10 @@ export function PortfolioShell({ posts }: { posts: BlogPostMeta[] }) {
   const [activeTab, setActiveTab] = useState<Tab>('About');
   const [detailsOpen, setDetailsOpen] = useState(false);
   const selectTab = (tab: Tab) => { setActiveTab(tab); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+  useEffect(() => {
+    if (window.location.hash.toLowerCase() === '#blog') setActiveTab('Blog');
+  }, []);
 
   return (
     <main className="portfolio-shell">
