@@ -10,14 +10,14 @@ const tabs = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'] as const;
 type Tab = (typeof tabs)[number];
 const serviceIcons = { code: Code2, data: Database, shield: ShieldCheck };
 
-function SectionTitle({ eyebrow, title }: { eyebrow?: string; title: string }) {
-  return <div className="panel-heading">{eyebrow ? <p>{eyebrow}</p> : null}<h2>{title}</h2><span aria-hidden="true" /></div>;
+function SectionTitle({ title }: { title: string }) {
+  return <div className="panel-heading"><h2>{title}</h2><span aria-hidden="true" /></div>;
 }
 
 function AboutPanel({ onExplore }: { onExplore: () => void }) {
   return (
     <section className="panel-section" aria-labelledby="about-title">
-      <SectionTitle eyebrow="A little introduction" title="About me" />
+      <SectionTitle title="About me" />
       <div className="about-copy" id="about-title">{portfolio.about.map((text) => <p key={text}>{text}</p>)}</div>
       <h3 className="subheading">What I do</h3>
       <div className="service-grid">

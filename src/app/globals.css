@@ -38,7 +38,6 @@ button,a { font:inherit; } button { color:inherit; } a { color:inherit; text-dec
 .tab-nav button.active::after { content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; background:var(--gold); box-shadow:0 0 12px rgba(243,201,107,.55); }
 .panel-wrap { animation:panel-in .35s ease both; }
 .panel-section { padding:42px; padding-top:78px; }
-.panel-heading p { margin:0 0 8px; color:var(--gold); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.18em; }
 .panel-heading h2 { margin:0; font-size:clamp(32px,5vw,42px); letter-spacing:-.045em; }
 .panel-heading span { display:block; width:42px; height:5px; margin-top:17px; border-radius:5px; background:linear-gradient(90deg,var(--gold),#d8a94c); }
 .about-copy,.panel-intro { max-width:760px; margin:29px 0 0; color:var(--muted); font-size:16px; line-height:1.8; }
