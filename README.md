@@ -6,6 +6,27 @@ A small, static portfolio built with Next.js, TypeScript, and Tailwind CSS. It e
 
 Edit `src/data/portfolio.ts`. The name, introduction, skills, GitHub profile, and projects all live in that one file.
 
+## Add a blog post
+
+Create a Markdown file in `content/blog`. Its filename becomes the URL slug, so `my-new-post.md` is published at `/blog/my-new-post/`.
+
+Start every post with this front matter:
+
+```md
+---
+title: "My new post"
+category: "Web development"
+excerpt: "A short description for the blog card and page metadata."
+published: "2026-10-11"
+repository: "https://github.com/klmensah/example"
+accent: "blue"
+---
+
+Write the article in Markdown here.
+```
+
+Available accents are `amber`, `violet`, `blue`, `green`, `rose`, and `gold`. The blog listing and article page are generated automatically during the build.
+
 ## Run locally
 
 ```bash

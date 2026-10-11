@@ -32,30 +32,4 @@ export const portfolio = {
     { title: 'Memory Allocation Simulator', description: 'A Python program that simulates memory allocation and fragmentation.', language: 'Python', category: 'Computer science', repository: 'https://github.com/klmensah/memory-allocation-simulator', accent: 'rose' },
     { title: 'Personal Portfolio', description: 'This responsive portfolio, statically exported and deployed with GitHub Actions.', language: 'TypeScript', category: 'Web design', repository: 'https://github.com/klmensah/my_portfolio', accent: 'gold' },
   ],
-  blogPosts: [
-    {
-      category: 'Computer science',
-      title: 'Making memory allocation visible with Python',
-      excerpt: 'Why a small simulator can make fragmentation and allocation strategies easier to understand.',
-      body: 'Memory management becomes clearer when you can see blocks being allocated, released, and fragmented. This project turns that operating-systems concept into a practical Python exercise and creates a foundation for comparing allocation strategies.',
-      repository: 'https://github.com/klmensah/memory-allocation-simulator',
-      accent: 'rose',
-    },
-    {
-      category: 'Product thinking',
-      title: 'Designing software around financial workflows',
-      excerpt: 'Notes from translating a real organisational need into a focused TypeScript application.',
-      body: 'Finance software needs more than forms and totals. The Church Finance App is an opportunity to think about clear records, understandable workflows, and interfaces that help users work confidently with important information.',
-      repository: 'https://github.com/klmensah/church-finance-app',
-      accent: 'amber',
-    },
-    {
-      category: 'Legal technology',
-      title: 'What legal thinking brings to software design',
-      excerpt: 'How rules, evidence, edge cases, and careful language influence the way I approach a system.',
-      body: 'Legal and software work both depend on structure. Case-management projects let me explore how precise requirements, clear states, and careful handling of information can shape software that is easier to understand and trust.',
-      repository: 'https://github.com/klmensah/legal-case-management',
-      accent: 'violet',
-    },
-  ],
 } as const;

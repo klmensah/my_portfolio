@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, MapPin, ShieldCheck } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
+import type { BlogPostMeta } from '@/lib/blog';
 
 const tabs = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'] as const;
 type Tab = (typeof tabs)[number];
@@ -57,13 +59,13 @@ function PortfolioPanel() {
   );
 }
 
-function BlogPanel() {
+function BlogPanel({ posts }: { posts: BlogPostMeta[] }) {
   return (
     <section className="panel-section" aria-labelledby="blog-title">
       <SectionTitle eyebrow="Notes from the journey" title="Blog" />
       <p className="panel-intro" id="blog-title">Short reflections on the projects and ideas shaping my growth as a software developer.</p>
       <div className="blog-grid">
-        {portfolio.blogPosts.map((post, index) => (
+        {posts.map((post, index) => (
           <article className="blog-card" key={post.title}>
             <div className={`blog-cover project-${post.accent}`}>
               <span>Note 0{index + 1}</span>
@@ -73,13 +75,8 @@ function BlogPanel() {
               <p>{post.category}</p>
               <h3>{post.title}</h3>
               <p>{post.excerpt}</p>
-              <details>
-                <summary>Read note</summary>
-                <div className="blog-note">
-                  <p>{post.body}</p>
-                  <a href={post.repository} target="_blank" rel="noreferrer">Explore the project <ArrowUpRight aria-hidden="true" /></a>
-                </div>
-              </details>
+              <div className="blog-meta"><span>{post.dateLabel}</span><span>Markdown article</span></div>
+              <Link className="blog-read-link" href={`/blog/${post.slug}`}>Read article <ArrowUpRight aria-hidden="true" /></Link>
             </div>
           </article>
         ))}
@@ -98,7 +95,7 @@ function ContactPanel() {
   );
 }
 
-export function PortfolioShell() {
+export function PortfolioShell({ posts }: { posts: BlogPostMeta[] }) {
   const [activeTab, setActiveTab] = useState<Tab>('About');
   const [detailsOpen, setDetailsOpen] = useState(false);
   const selectTab = (tab: Tab) => { setActiveTab(tab); window.scrollTo({ top: 0, behavior: 'smooth' }); };
@@ -119,7 +116,7 @@ export function PortfolioShell() {
       </aside>
       <div className="content-card">
         <nav className="tab-nav" aria-label="Portfolio sections">{tabs.map((tab) => <button key={tab} type="button" className={activeTab === tab ? 'active' : ''} aria-current={activeTab === tab ? 'page' : undefined} onClick={() => selectTab(tab)}>{tab}</button>)}</nav>
-        <div className="panel-wrap" key={activeTab}>{activeTab === 'About' && <AboutPanel onExplore={() => selectTab('Portfolio')} />}{activeTab === 'Resume' && <ResumePanel />}{activeTab === 'Portfolio' && <PortfolioPanel />}{activeTab === 'Blog' && <BlogPanel />}{activeTab === 'Contact' && <ContactPanel />}</div>
+        <div className="panel-wrap" key={activeTab}>{activeTab === 'About' && <AboutPanel onExplore={() => selectTab('Portfolio')} />}{activeTab === 'Resume' && <ResumePanel />}{activeTab === 'Portfolio' && <PortfolioPanel />}{activeTab === 'Blog' && <BlogPanel posts={posts} />}{activeTab === 'Contact' && <ContactPanel />}</div>
       </div>
     </main>
   );
