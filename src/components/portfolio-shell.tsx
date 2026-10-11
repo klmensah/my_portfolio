@@ -108,7 +108,7 @@ export function PortfolioShell({ posts }: { posts: BlogPostMeta[] }) {
     <main className="portfolio-shell">
       <aside className={`identity-card ${detailsOpen ? 'details-open' : ''}`}>
         <div className="identity-main">
-          <div className="avatar-wrap"><img src={portfolio.avatar} alt={`${portfolio.fullName} GitHub avatar`} /><span aria-label="Available for opportunities" /></div>
+          <div className="avatar-wrap"><img src={portfolio.avatar} alt={`${portfolio.fullName} portrait`} /><span aria-label="Available for opportunities" /></div>
           <div className="identity-copy"><h1>{portfolio.name}</h1><p>{portfolio.role}</p></div>
           <button className="details-toggle" type="button" aria-label="Toggle contact details" aria-expanded={detailsOpen} onClick={() => setDetailsOpen((open) => !open)}><span>Show contacts</span><ChevronDown aria-hidden="true" /></button>
         </div>

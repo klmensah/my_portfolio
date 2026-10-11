@@ -3,7 +3,7 @@ export const portfolio = {
   fullName: 'K.L. Mensah',
   role: 'Software Developer',
   location: 'Accra, Ghana',
-  avatar: 'https://avatars.githubusercontent.com/u/171818853?v=4',
+  avatar: 'profile-portrait.jpg',
   github: 'https://github.com/klmensah',
   about: [
     'I build practical web applications and enjoy turning complicated requirements into clear, usable experiences. My work spans modern TypeScript interfaces, data-driven systems, and software engineering assignments.',
