@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'K.L.M. | Full-Stack Developer',
+  title: 'K.L.M. | Software Developer',
   description:
-    'Portfolio of K.L.M., a security-minded full-stack developer building practical web software.',
-  keywords: ['full-stack developer', 'software engineer', 'TypeScript', 'Next.js', 'security'],
+    'Portfolio of K.L. Mensah, a software developer and student in Accra building practical web applications.',
+  keywords: ['software developer', 'portfolio', 'TypeScript', 'Next.js', 'Accra'],
 };
 
 export default function RootLayout({
