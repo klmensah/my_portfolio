@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, HandHeart, MapPin, ShieldCheck } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
 import type { BlogPostMeta } from '@/lib/blog';
 
-const tabs = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'] as const;
+const tabs = ['About', 'Resume', 'Portfolio', 'Blog', 'Hire Me'] as const;
 type Tab = (typeof tabs)[number];
 const serviceIcons = { code: Code2, data: Database, shield: ShieldCheck };
 
@@ -81,15 +81,20 @@ function BlogPanel({ posts }: { posts: BlogPostMeta[] }) {
           </article>
         ))}
       </div>
+      <aside className="support-callout" aria-label="Support my work">
+        <div className="support-icon"><HandHeart aria-hidden="true" /></div>
+        <div><h3>Enjoying these notes?</h3><p>Your support helps me keep learning, building, and sharing practical articles.</p></div>
+        <a href={portfolio.supportUrl} target="_blank" rel="noreferrer">Support my work <ArrowUpRight aria-hidden="true" /></a>
+      </aside>
     </section>
   );
 }
 
-function ContactPanel() {
+function HirePanel() {
   return (
-    <section className="panel-section" aria-labelledby="contact-title">
-      <SectionTitle title="Contact" />
-      <div className="contact-card" id="contact-title"><p className="contact-kicker">Open to learning, collaboration, and opportunities.</p><h3>Have a project or idea worth exploring?</h3><p>GitHub is the best place to see what I am working on and start a conversation. I am based in Accra and continue to grow through practical software projects.</p><a href={portfolio.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> Visit my GitHub <ArrowUpRight aria-hidden="true" /></a></div>
+    <section className="panel-section" aria-labelledby="hire-title">
+      <SectionTitle title="Hire me" />
+      <div className="contact-card" id="hire-title"><p className="contact-kicker">Available for freelance work and thoughtful collaborations.</p><h3>Let&apos;s turn your idea into useful software.</h3><p>I can help design and build responsive web applications, internal tools, and structured legal or financial workflows. Explore my work on GitHub and get in touch to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> Discuss a project <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
       <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Currently</small>Bachelor&apos;s degree student</span></div></div>
     </section>
   );
@@ -120,7 +125,7 @@ export function PortfolioShell({ posts }: { posts: BlogPostMeta[] }) {
       </aside>
       <div className="content-card">
         <nav className="tab-nav" aria-label="Portfolio sections">{tabs.map((tab) => <button key={tab} type="button" className={activeTab === tab ? 'active' : ''} aria-current={activeTab === tab ? 'page' : undefined} onClick={() => selectTab(tab)}>{tab}</button>)}</nav>
-        <div className="panel-wrap" key={activeTab}>{activeTab === 'About' && <AboutPanel onExplore={() => selectTab('Portfolio')} />}{activeTab === 'Resume' && <ResumePanel />}{activeTab === 'Portfolio' && <PortfolioPanel />}{activeTab === 'Blog' && <BlogPanel posts={posts} />}{activeTab === 'Contact' && <ContactPanel />}</div>
+        <div className="panel-wrap" key={activeTab}>{activeTab === 'About' && <AboutPanel onExplore={() => selectTab('Portfolio')} />}{activeTab === 'Resume' && <ResumePanel />}{activeTab === 'Portfolio' && <PortfolioPanel />}{activeTab === 'Blog' && <BlogPanel posts={posts} />}{activeTab === 'Hire Me' && <HirePanel />}</div>
       </div>
     </main>
   );

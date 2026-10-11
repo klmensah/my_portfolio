@@ -4,7 +4,7 @@ A small, static portfolio built with Next.js, TypeScript, and Tailwind CSS. It e
 
 ## Update the content
 
-Edit `src/data/portfolio.ts`. The name, introduction, skills, GitHub profile, and projects all live in that one file.
+Edit `src/data/portfolio.ts`. The name, introduction, skills, GitHub profile, support link, and projects all live in that one file. Set `supportUrl` to your GitHub Sponsors, Ko-fi, or Buy Me a Coffee page.
 
 ## Add a blog post
 

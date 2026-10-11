@@ -5,6 +5,7 @@ export const portfolio = {
   location: 'Accra, Ghana',
   avatar: 'profile-portrait.jpg',
   github: 'https://github.com/klmensah',
+  supportUrl: 'https://github.com/sponsors/klmensah',
   about: [
     'I build practical web applications and enjoy turning complicated requirements into clear, usable experiences. My work spans modern TypeScript interfaces, data-driven systems, and software engineering assignments.',
     'A background in law influences the way I work: I pay attention to detail, think carefully about rules and edge cases, and care about building systems people can trust.',
