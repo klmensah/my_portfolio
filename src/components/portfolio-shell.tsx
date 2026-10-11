@@ -10,8 +10,8 @@ const tabs = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'] as const;
 type Tab = (typeof tabs)[number];
 const serviceIcons = { code: Code2, data: Database, shield: ShieldCheck };
 
-function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
-  return <div className="panel-heading"><p>{eyebrow}</p><h2>{title}</h2><span aria-hidden="true" /></div>;
+function SectionTitle({ eyebrow, title }: { eyebrow?: string; title: string }) {
+  return <div className="panel-heading">{eyebrow ? <p>{eyebrow}</p> : null}<h2>{title}</h2><span aria-hidden="true" /></div>;
 }
 
 function AboutPanel({ onExplore }: { onExplore: () => void }) {
@@ -34,7 +34,7 @@ function AboutPanel({ onExplore }: { onExplore: () => void }) {
 function ResumePanel() {
   return (
     <section className="panel-section" aria-labelledby="resume-title">
-      <SectionTitle eyebrow="Learning by building" title="Resume" />
+      <SectionTitle title="Resume" />
       <div className="timeline" id="resume-title">
         {portfolio.journey.map((item) => <article className="timeline-item" key={`${item.period}-${item.title}`}><div className="timeline-icon">{item.type === 'education' ? <GraduationCap aria-hidden="true" /> : <BriefcaseBusiness aria-hidden="true" />}</div><div><p className="timeline-period">{item.period}</p><h3>{item.title}</h3><p>{item.description}</p></div></article>)}
       </div>
@@ -47,7 +47,7 @@ function ResumePanel() {
 function PortfolioPanel() {
   return (
     <section className="panel-section" aria-labelledby="portfolio-title">
-      <SectionTitle eyebrow="Work from GitHub" title="Portfolio" />
+      <SectionTitle title="Portfolio" />
       <p className="panel-intro" id="portfolio-title">A selection of applications and coursework that document my progress as a developer.</p>
       <div className="project-grid">
         {portfolio.projects.map((project, index) => <article className="project-card" key={project.title}>
@@ -62,7 +62,7 @@ function PortfolioPanel() {
 function BlogPanel({ posts }: { posts: BlogPostMeta[] }) {
   return (
     <section className="panel-section" aria-labelledby="blog-title">
-      <SectionTitle eyebrow="Notes from the journey" title="Blog" />
+      <SectionTitle title="Blog" />
       <p className="panel-intro" id="blog-title">Short reflections on the projects and ideas shaping my growth as a software developer.</p>
       <div className="blog-grid">
         {posts.map((post, index) => (
@@ -88,7 +88,7 @@ function BlogPanel({ posts }: { posts: BlogPostMeta[] }) {
 function ContactPanel() {
   return (
     <section className="panel-section" aria-labelledby="contact-title">
-      <SectionTitle eyebrow="Start a conversation" title="Contact" />
+      <SectionTitle title="Contact" />
       <div className="contact-card" id="contact-title"><p className="contact-kicker">Open to learning, collaboration, and opportunities.</p><h3>Have a project or idea worth exploring?</h3><p>GitHub is the best place to see what I am working on and start a conversation. I am based in Accra and continue to grow through practical software projects.</p><a href={portfolio.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> Visit my GitHub <ArrowUpRight aria-hidden="true" /></a></div>
       <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Currently</small>Bachelor&apos;s degree student</span></div></div>
     </section>
