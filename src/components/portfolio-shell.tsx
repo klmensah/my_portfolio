@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, HandHeart, Linkedin, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, HandHeart, Linkedin, MapPin, ShieldCheck } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
 import type { BlogPostMeta } from '@/lib/blog';
 
@@ -36,7 +36,7 @@ function ResumePanel() {
     <section className="panel-section" aria-labelledby="resume-title">
       <SectionTitle title="Resume" />
       <div className="timeline" id="resume-title">
-        {portfolio.journey.map((item) => <article className="timeline-item" key={`${item.period}-${item.title}`}><div className="timeline-icon">{item.type === 'education' ? <GraduationCap aria-hidden="true" /> : <BriefcaseBusiness aria-hidden="true" />}</div><div><p className="timeline-period">{item.period}</p><h3>{item.title}</h3><p>{item.description}</p></div></article>)}
+        {portfolio.journey.map((item) => <article className="timeline-item" key={`${item.period}-${item.title}`}><div className="timeline-icon"><BriefcaseBusiness aria-hidden="true" /></div><div><p className="timeline-period">{item.period}</p><h3>{item.title}</h3><p>{item.description}</p></div></article>)}
       </div>
       <h3 className="subheading">Working knowledge</h3>
       <div className="skill-grid">{portfolio.skillGroups.map((group) => <article className="skill-card" key={group.title}><h4>{group.title}</h4><ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></article>)}</div>
@@ -48,12 +48,16 @@ function PortfolioPanel() {
   return (
     <section className="panel-section" aria-labelledby="portfolio-title">
       <SectionTitle title="Portfolio" />
-      <p className="panel-intro" id="portfolio-title">A selection of applications and coursework that document my progress as a developer.</p>
+      <p className="panel-intro" id="portfolio-title">Selected Dockerised applications built around real document, workflow, and operational needs.</p>
       <div className="project-grid">
-        {portfolio.projects.map((project, index) => <article className="project-card" key={project.title}>
-          <a className={`project-visual project-${project.accent}`} href={'live' in project ? project.live : project.repository} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}><span>0{index + 1}</span><strong>{project.category}</strong><ExternalLink aria-hidden="true" /></a>
-          <div className="project-body"><div><h3>{project.title}</h3><p>{project.language}</p></div><p>{project.description}</p><div className="project-links"><a href={project.repository} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> Source</a>{'live' in project ? <a href={project.live} target="_blank" rel="noreferrer">Live site <ArrowUpRight aria-hidden="true" /></a> : null}</div></div>
-        </article>)}
+        {portfolio.projects.map((project, index) => {
+          const destination = project.repository;
+          const visualContent = <><span>{String(index + 1).padStart(2, '0')}</span><strong>{project.category}</strong>{destination ? <ExternalLink aria-hidden="true" /> : null}</>;
+          return <article className="project-card" key={project.title}>
+            {destination ? <a className={`project-visual project-${project.accent}`} href={destination} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}>{visualContent}</a> : <div className={`project-visual project-${project.accent}`}>{visualContent}</div>}
+            <div className="project-body"><div><h3>{project.title}</h3><p>{project.language}</p></div><p>{project.description}</p>{project.repository ? <div className="project-links"><a href={project.repository} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> Source</a></div> : null}</div>
+          </article>;
+        })}
       </div>
     </section>
   );
@@ -94,8 +98,8 @@ function HirePanel() {
   return (
     <section className="panel-section" aria-labelledby="hire-title">
       <SectionTitle title="Hire me" />
-      <div className="contact-card" id="hire-title"><p className="contact-kicker">Available for freelance work and thoughtful collaborations.</p><h3>Let&apos;s turn your idea into useful software.</h3><p>I can help design and build responsive web applications, internal tools, and structured legal or financial workflows. Explore my work and connect with me on LinkedIn to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
-      <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Currently</small>Bachelor&apos;s degree student</span></div><a href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /><span><small>Professional network</small>Connect on LinkedIn</span><ArrowUpRight className="detail-arrow" aria-hidden="true" /></a></div>
+      <div className="contact-card" id="hire-title"><p className="contact-kicker">Available for software-development opportunities, freelance work, and collaborations.</p><h3>Let&apos;s turn your workflow into useful software.</h3><p>I can help design and build enterprise applications, internal tools, document-management platforms, and data-driven systems. Explore my work and connect with me on LinkedIn to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
+      <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Focus</small>Workflow &amp; information systems</span></div><a href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /><span><small>Professional network</small>Connect on LinkedIn</span><ArrowUpRight className="detail-arrow" aria-hidden="true" /></a></div>
     </section>
   );
 }
