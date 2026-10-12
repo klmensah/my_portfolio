@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, HandHeart, Linkedin, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, Download, ExternalLink, Github, HandHeart, Linkedin, MapPin, ShieldCheck } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
 import type { BlogPostMeta } from '@/lib/blog';
 
@@ -26,7 +26,7 @@ function AboutPanel({ onExplore }: { onExplore: () => void }) {
           return <article className="service-card" key={service.title}><div className="icon-box"><Icon aria-hidden="true" /></div><div><h4>{service.title}</h4><p>{service.description}</p></div></article>;
         })}
       </div>
-      <div className="about-cta"><div><p>Selected work</p><h3>See what I have been building.</h3></div><button type="button" onClick={onExplore}>Explore projects <ArrowUpRight aria-hidden="true" /></button></div>
+      <div className="about-cta"><div><h3>See what I have been building.</h3></div><button type="button" onClick={onExplore}>Explore projects <ArrowUpRight aria-hidden="true" /></button></div>
     </section>
   );
 }
@@ -35,6 +35,11 @@ function ResumePanel() {
   return (
     <section className="panel-section" aria-labelledby="resume-title">
       <SectionTitle title="Resume" />
+      <a className="resume-download" href="Lawrence-Mensah-Resume.pdf" download>
+        <span className="resume-download-icon"><Download aria-hidden="true" /></span>
+        <span><strong>Download my résumé</strong><small>One-page PDF</small></span>
+        <ArrowUpRight className="resume-download-arrow" aria-hidden="true" />
+      </a>
       <div className="timeline" id="resume-title">
         {portfolio.journey.map((item) => <article className="timeline-item" key={`${item.period}-${item.title}`}><div className="timeline-icon"><BriefcaseBusiness aria-hidden="true" /></div><div><p className="timeline-period">{item.period}</p><h3>{item.title}</h3><p>{item.description}</p></div></article>)}
       </div>
@@ -98,7 +103,7 @@ function HirePanel() {
   return (
     <section className="panel-section" aria-labelledby="hire-title">
       <SectionTitle title="Hire me" />
-      <div className="contact-card" id="hire-title"><p className="contact-kicker">Available for software-development opportunities, freelance work, and collaborations.</p><h3>Let&apos;s turn your workflow into useful software.</h3><p>I can help design and build enterprise applications, internal tools, document-management platforms, and data-driven systems. Explore my work and connect with me on LinkedIn to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
+      <div className="contact-card" id="hire-title"><h3>Let&apos;s turn your workflow into useful software.</h3><p>I can help design and build enterprise applications, internal tools, document-management platforms, and data-driven systems. Explore my work and connect with me on LinkedIn to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
       <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Focus</small>Workflow &amp; information systems</span></div><a href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /><span><small>Professional network</small>Connect on LinkedIn</span><ArrowUpRight className="detail-arrow" aria-hidden="true" /></a></div>
     </section>
   );
