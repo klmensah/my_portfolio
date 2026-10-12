@@ -148,7 +148,7 @@ button,a { font:inherit; } button { color:inherit; } a { color:inherit; text-dec
   .identity-copy { flex:1; } .identity-copy h1 { font-size:25px; } .identity-copy p { margin:9px 0 0; }
   .details-toggle { display:flex; align-items:center; gap:6px; padding:10px 12px; border:1px solid #3c3935; border-radius:10px; background:#272522; color:var(--gold); cursor:pointer; font-size:12px; }
   .details-toggle svg { width:15px; transition:transform .25s; } .details-open .details-toggle svg { transform:rotate(180deg); }
-  .identity-details { display:none; } .details-open .identity-details { display:block; } .identity-details ul { grid-template-columns:repeat(2,1fr); }
+  .identity-details { display:none; } .details-open .identity-details { display:block; } .identity-details ul { grid-template-columns:repeat(3,1fr); }
   .content-card { overflow:visible; }
 }
 @media (max-width:700px) {

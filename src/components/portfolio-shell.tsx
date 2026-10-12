@@ -130,7 +130,6 @@ export function PortfolioShell({ posts }: { posts: BlogPostMeta[] }) {
           <li><span className="contact-icon"><MapPin aria-hidden="true" /></span><div><small>Location</small><p>{portfolio.location}</p></div></li>
           <li><span className="contact-icon"><Github aria-hidden="true" /></span><div><small>GitHub</small><a href={portfolio.github} target="_blank" rel="noreferrer">@klmensah</a></div></li>
           <li><span className="contact-icon"><Linkedin aria-hidden="true" /></span><div><small>LinkedIn</small><a href={portfolio.linkedin} target="_blank" rel="noreferrer">Connect with me</a></div></li>
-          <li><span className="contact-icon"><BookOpen aria-hidden="true" /></span><div><small>Focus</small><p>Software development</p></div></li>
         </ul><a className="github-button" href={portfolio.github} target="_blank" rel="noreferrer">View GitHub <ArrowUpRight aria-hidden="true" /></a></div>
       </aside>
       <div className="content-card">
