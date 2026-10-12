@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, HandHeart, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, BookOpen, BriefcaseBusiness, ChevronDown, Code2, Database, ExternalLink, Github, GraduationCap, HandHeart, Linkedin, MapPin, ShieldCheck } from 'lucide-react';
 import { portfolio } from '@/data/portfolio';
 import type { BlogPostMeta } from '@/lib/blog';
 
@@ -94,8 +94,8 @@ function HirePanel() {
   return (
     <section className="panel-section" aria-labelledby="hire-title">
       <SectionTitle title="Hire me" />
-      <div className="contact-card" id="hire-title"><p className="contact-kicker">Available for freelance work and thoughtful collaborations.</p><h3>Let&apos;s turn your idea into useful software.</h3><p>I can help design and build responsive web applications, internal tools, and structured legal or financial workflows. Explore my work on GitHub and get in touch to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> Discuss a project <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
-      <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Currently</small>Bachelor&apos;s degree student</span></div></div>
+      <div className="contact-card" id="hire-title"><p className="contact-kicker">Available for freelance work and thoughtful collaborations.</p><h3>Let&apos;s turn your idea into useful software.</h3><p>I can help design and build responsive web applications, internal tools, and structured legal or financial workflows. Explore my work and connect with me on LinkedIn to discuss your project.</p><div className="contact-actions"><a className="contact-primary" href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="contact-secondary" href={portfolio.supportUrl} target="_blank" rel="noreferrer"><HandHeart aria-hidden="true" /> Support my work</a></div></div>
+      <div className="contact-details"><div><MapPin aria-hidden="true" /><span><small>Based in</small>{portfolio.location}</span></div><div><BookOpen aria-hidden="true" /><span><small>Currently</small>Bachelor&apos;s degree student</span></div><a href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /><span><small>Professional network</small>Connect on LinkedIn</span><ArrowUpRight className="detail-arrow" aria-hidden="true" /></a></div>
     </section>
   );
 }
@@ -120,6 +120,7 @@ export function PortfolioShell({ posts }: { posts: BlogPostMeta[] }) {
         <div className="identity-details"><div className="divider" /><ul>
           <li><span className="contact-icon"><MapPin aria-hidden="true" /></span><div><small>Location</small><p>{portfolio.location}</p></div></li>
           <li><span className="contact-icon"><Github aria-hidden="true" /></span><div><small>GitHub</small><a href={portfolio.github} target="_blank" rel="noreferrer">@klmensah</a></div></li>
+          <li><span className="contact-icon"><Linkedin aria-hidden="true" /></span><div><small>LinkedIn</small><a href={portfolio.linkedin} target="_blank" rel="noreferrer">Connect with me</a></div></li>
           <li><span className="contact-icon"><BookOpen aria-hidden="true" /></span><div><small>Focus</small><p>Software development</p></div></li>
         </ul><a className="github-button" href={portfolio.github} target="_blank" rel="noreferrer">View GitHub <ArrowUpRight aria-hidden="true" /></a></div>
       </aside>
